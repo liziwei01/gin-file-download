@@ -1,0 +1,15 @@
+# Service的名字, 必选
+Name = "redis_idiary_cache"
+
+# 资源定位: 手动配置 - 使用IP、端口
+[Resource.Manual]
+Host = "localhost"
+Port = 6379
+
+# redis必要配置, 这一项必须要有
+# 连接池使用go-redis带的连接池, 每个ip+端口分配一个连接池
+[Redis]
+# DB 可选
+DB = 0
+# Password 可选
+Password = ""

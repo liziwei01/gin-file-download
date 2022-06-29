@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-03-03 19:50:47
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-14 00:08:02
+ * @LastEditTime: 2022-06-30 04:47:26
  * @Description: 标准错误函数
  */
 package response
@@ -67,3 +67,7 @@ func StdResponse(ctx *gin.Context, code int, msg string, data ...interface{}) {
 	}
 	ctx.JSON(http.StatusOK, resp)
 }
+
+// func StdFile(ctx *gin.Context, data []byte) {
+// 	ctx.DataFromReader(200, ctx..Response.ContentLength, "application/octet-stream", fileContent, nil)
+// }

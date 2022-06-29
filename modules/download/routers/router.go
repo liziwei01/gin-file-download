@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 10:45:14
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-17 20:41:29
+ * @LastEditTime: 2022-06-30 05:23:14
  * @Description: file content
  */
 package routers
@@ -10,7 +10,8 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 
-	uploadController "github.com/liziwei01/gin-file-download/modules/upload/controllers"
+	"github.com/liziwei01/gin-file-download/middleware"
+	downloadController "github.com/liziwei01/gin-file-download/modules/download/controllers"
 )
 
 /**
@@ -19,9 +20,9 @@ import (
  * @return {*}
  */
 func Init(router *gin.Engine) {
-	uploadGroup := router.Group("/api/upload")
+	downloadGroup := router.Group("/gin-file-download/api/download")
+	downloadGroup.Use(middleware.CheckLoginMiddleware())
 	{
-		uploadGroup.POST("/image", uploadController.UploadImage)
-		uploadGroup.GET("/getImageURL", uploadController.GetImageURL)
+		downloadGroup.GET("/local", downloadController.DownloadLocal)
 	}
 }

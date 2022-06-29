@@ -11,5 +11,5 @@ Port = 465
 # email组件配置
 [Email]
 Address = "no_reply_idiary@163.com"
-Password = "RXTGMMXOTGELMOJN"
+Password = ""
 

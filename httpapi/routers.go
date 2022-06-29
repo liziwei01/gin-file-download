@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-03-03 16:04:46
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-06-27 21:09:28
+ * @LastEditTime: 2022-06-30 04:55:35
  * @Description: 路由分发
  */
 
@@ -14,6 +14,7 @@ import (
 	"github.com/liziwei01/gin-file-download/middleware"
 	emailRouters "github.com/liziwei01/gin-file-download/modules/email/routers"
 	uploadRouters "github.com/liziwei01/gin-file-download/modules/upload/routers"
+	downloadRouters "github.com/liziwei01/gin-file-download/modules/download/routers"
 	userRouters "github.com/liziwei01/gin-file-download/modules/user/routers"
 
 	"github.com/gin-gonic/gin"
@@ -32,6 +33,7 @@ func InitRouters(router *gin.Engine) {
 	userRouters.Init(router)
 	emailRouters.Init(router)
 	uploadRouters.Init(router)
+	downloadRouters.Init(router)
 
 	// safe router
 	router.GET("/", func(ctx *gin.Context) {

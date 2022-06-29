@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-03-05 15:45:31
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-03-10 20:52:02
+ * @LastEditTime: 2022-06-30 05:22:13
  * @Description: file content
  */
 package middleware
@@ -23,19 +23,24 @@ func CheckSignMiddleware() gin.HandlerFunc {
 		if isRealease() != true {
 			// 线下无限制.
 			c.Next()
+			return
 		} else if !signConf.Enable {
 			// 签名校验未开启.
 			c.Next()
+			return
 		} else if checkNoSignPath(path) == true {
 			// 不需要sign校验的接口.
 			c.Next()
+			return
 		} else if !request.CheckSignValid(c.Request, signConf.Sign) {
 			// sign校验失败.
 			response.StdSignCheckFailed(c)
 			c.Abort()
+			return
 		} else {
 			// sign校验成功.
 			c.Next()
+			return
 		}
 	}
 }

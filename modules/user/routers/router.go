@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-18 17:27:34
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-06-28 01:56:41
+ * @LastEditTime: 2022-06-30 04:35:20
  * @Description: file content
  */
 package routers
@@ -19,7 +19,7 @@ import (
  * @return {*}
  */
 func Init(router *gin.Engine) {
-	userGroup := router.Group("/user")
+	userGroup := router.Group("/gin-file-download/user")
 	{
 		// userGroup.POST("/register", userControllers.Register)
 		userGroup.GET("/login", userControllers.Login)

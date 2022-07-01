@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-17 14:13:10
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-23 00:26:58
+ * @LastEditTime: 2022-07-02 06:09:12
  * @Description: file content
  */
 package info
@@ -16,7 +16,7 @@ type UserInfo struct {
 	Email    string `json:"email" ddb:"email"`
 	Nickname string `json:"nickname" ddb:"nickname"`
 	Profile  string `json:"profile" ddb:"profile"`
-	Password string `json:"password" ddb:"password"`
+	Password []byte `json:"password" ddb:"password"`
 }
 
 type UserInfoNonsensitive struct {

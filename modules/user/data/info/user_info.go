@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-17 14:12:20
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-06-28 01:54:47
+ * @LastEditTime: 2022-07-02 06:09:24
  * @Description: file content
  */
 /*
@@ -63,7 +63,7 @@ func GetUserInfoByEmail(ctx context.Context, email string) (infoModel.UserInfo, 
 		return infoModel.UserInfo{}, fmt.Errorf("invalid user info len: %v", len(info))
 	}
 
-	info[0].Password, err = utils.Encrypt.Base64DecodeString(info[0].Password)
+	info[0].Password, err = utils.Encrypt.Base64Decode(info[0].Password)
 	if err != nil {
 		return infoModel.UserInfo{}, err
 	}

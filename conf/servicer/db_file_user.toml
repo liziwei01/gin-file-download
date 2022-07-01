@@ -13,12 +13,12 @@ ReadTimeOut = 500
 
 # 资源定位: 手动配置 - 使用IP、端口
 [Resource.Manual]
-Host = "localhost"
+Host = "rm-bp17lvq049ft85ht1ao.mysql.rds.aliyuncs.com"
 Port = 3306
 
 # mysql组件配置
 [MySQL]
-Username = "root"
+Username = "gin_file_download_user"
 Password = ""
 DBName = "db_file_user"
 DBDriver = "mysql"

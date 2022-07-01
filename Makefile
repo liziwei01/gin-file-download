@@ -6,8 +6,9 @@ APPNAME := $(shell basename `pwd`)
 OUTPUT_FILE := ${APPNAME}.tar.gz
 
 # GOROOT  := /usr/local
-GOROOT  := /home/linuxbrew/.linuxbrew
-GO      := $(GOROOT)/bin/go
+# GOROOT  := /home/linuxbrew/.linuxbrew
+# GO      := $(GOROOT)/bin/go
+GO      := $(shell which go)
 GOPATH  := $(shell $(GO) env GOPATH)
 GOMOD   := $(GO) mod
 GOBUILD := $(GO) build
@@ -26,7 +27,7 @@ prepare-dep:
 	git config --global http.sslVerify false
 
 set-env:
-	$(GO) env -w GOPROXY="https://goproxy.io"
+	$(GO) env -w GOPROXY="https://goproxy.io,direct"
 
 # make compile
 compile: build

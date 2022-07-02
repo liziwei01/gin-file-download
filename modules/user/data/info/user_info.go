@@ -63,7 +63,7 @@ func GetUserInfoByEmail(ctx context.Context, email string) (infoModel.UserInfo, 
 		return infoModel.UserInfo{}, fmt.Errorf("invalid user info len: %v", len(info))
 	}
 
-	info[0].Password, err = utils.Encrypt.Base64Decode(info[0].Password)
+	info[0].Password, err = utils.Encrypt.Base64DecodeString(info[0].Password)
 	if err != nil {
 		return infoModel.UserInfo{}, err
 	}

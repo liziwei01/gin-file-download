@@ -1,13 +1,16 @@
 /*
  * @Author: liziwei01
- * @Date: 2022-04-12 11:14:30
+ * @Date: 2022-07-02 19:41:58
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 21:48:02
+ * @LastEditTime: 2022-07-02 21:59:44
  * @Description: file content
  */
 package controllers
 
 import (
+	"os"
+	"path/filepath"
+
 	"github.com/liziwei01/gin-file-download/library/response"
 	downloadModel "github.com/liziwei01/gin-file-download/modules/download/model"
 
@@ -16,8 +19,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func DownloadLocal(ctx *gin.Context) {
-	inputs, hasError := getDownloadLocalPars(ctx)
+func Tree(ctx *gin.Context) {
+	inputs, hasError := getTreePars(ctx)
 	if hasError {
 		response.StdInvalidParams(ctx)
 		return
@@ -26,13 +29,23 @@ func DownloadLocal(ctx *gin.Context) {
 	if inputs.Path[0] != '/' {
 		inputs.Path = "/" + inputs.Path
 	}
-	
+
+	var files []string
 	absPath := "../gin-file-download-data/" + ctx.GetString("email") + inputs.Path
-	ctx.File(absPath)
+	err := filepath.Walk(absPath, func(path string, info os.FileInfo, err error) error {
+		files = append(files, path)
+		return nil
+	})
+	if err != nil {
+		response.StdFailed(ctx, err)
+		return
+	}
+
+	response.StdSuccess(ctx, files)
 }
 
-func getDownloadLocalPars(ctx *gin.Context) (downloadModel.DownloadPars, bool) {
-	var inputs downloadModel.DownloadPars
+func getTreePars(ctx *gin.Context) (downloadModel.TreePars, bool) {
+	var inputs downloadModel.TreePars
 
 	err := ctx.ShouldBind(&inputs)
 	if err != nil {

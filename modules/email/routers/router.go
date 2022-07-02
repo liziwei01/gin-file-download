@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 10:45:14
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-12 16:16:36
+ * @LastEditTime: 2022-07-02 19:49:59
  * @Description: file content
  */
 package routers
@@ -18,7 +18,7 @@ import (
  * @param {*}
  * @return {*}
  */
-func Init(router *gin.Engine) {
+func Init(router *gin.RouterGroup) {
 	emailGroup := router.Group("/email")
 	{
 		emailGroup.POST("/verificationCode", emailController.VerificationCode)

@@ -18,7 +18,7 @@ import (
  * @param {*}
  * @return {*}
  */
-func Init(router *gin.Engine) {
+func Init(router *gin.RouterGroup) {
 	uploadGroup := router.Group("/api/upload")
 	{
 		uploadGroup.POST("/image", uploadController.UploadImage)

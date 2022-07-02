@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-06-30 05:14:06
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-06-30 05:22:35
+ * @LastEditTime: 2022-07-02 22:05:53
  * @Description: file content
  */
 package middleware
@@ -28,7 +28,8 @@ func CheckLoginMiddleware() gin.HandlerFunc {
 			c.Next()
 			return
 		} else {
-			c.AbortWithStatus(401)
+			c.Redirect(302, "/gin-file-download/user/login")
+			// c.AbortWithStatus(401)
 			return
 		}
 	}

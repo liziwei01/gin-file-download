@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-03-03 16:04:46
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-06-30 04:55:35
+ * @LastEditTime: 2022-07-02 19:52:11
  * @Description: 路由分发
  */
 
@@ -12,9 +12,9 @@ import (
 	"net/http"
 
 	"github.com/liziwei01/gin-file-download/middleware"
+	downloadRouters "github.com/liziwei01/gin-file-download/modules/download/routers"
 	emailRouters "github.com/liziwei01/gin-file-download/modules/email/routers"
 	uploadRouters "github.com/liziwei01/gin-file-download/modules/upload/routers"
-	downloadRouters "github.com/liziwei01/gin-file-download/modules/download/routers"
 	userRouters "github.com/liziwei01/gin-file-download/modules/user/routers"
 
 	"github.com/gin-gonic/gin"
@@ -25,11 +25,12 @@ import (
  * @param {*}
  * @return {*}
  */
-func InitRouters(router *gin.Engine) {
+func InitRouters(handler *gin.Engine) {
 	//暂时解决跨域问题
-	router.Use(middleware.CrossRegionMiddleware())
+	handler.Use(middleware.CrossRegionMiddleware())
 	// router.Use(middleware.CheckTokenMiddleware(), middleware.GetFrequencyControlMiddleware(), middleware.PostFrequencyControlMiddleware(), middleware.MailFrequencyControlMiddleware())
 	// init routers
+	router := handler.Group("/gin-file-download")
 	userRouters.Init(router)
 	emailRouters.Init(router)
 	uploadRouters.Init(router)

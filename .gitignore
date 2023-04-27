@@ -47,3 +47,4 @@ go.work
 ### output ###
 *.DS_Store
 output
+/bin/

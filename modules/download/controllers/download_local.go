@@ -2,13 +2,13 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 11:14:30
  * @LastEditors: liziwei01
- * @LastEditTime: 2023-04-27 12:15:10
+ * @LastEditTime: 2023-04-27 14:37:19
  * @Description: file content
  */
 package controllers
 
 import (
-	"fmt"
+	"path/filepath"
 
 	"github.com/liziwei01/gin-file-download/library/file"
 	"github.com/liziwei01/gin-file-download/modules/download/constant"
@@ -32,11 +32,11 @@ func DownloadLocal(ctx *gin.Context) {
 	}
 	client, err := file.GetClient(ctx, constant.SERVICE_CONF_FILE)
 	if err != nil {
-		return 
+		return
 	}
 	absPath := client.Location() + ctx.GetString("email") + inputs.Path
-	fmt.Println(absPath)
-	ctx.File(absPath)
+	rlvPath := filepath.Base(absPath)
+	ctx.FileAttachment(absPath, rlvPath)
 }
 
 func getDownloadLocalPars(ctx *gin.Context) (downloadModel.DownloadPars, bool) {

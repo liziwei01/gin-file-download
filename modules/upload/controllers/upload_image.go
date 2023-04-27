@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 11:14:30
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-17 21:49:57
+ * @LastEditTime: 2023-04-06 16:33:50
  * @Description: file content
  */
 package controllers
@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/liziwei01/gin-file-download/library/logit"
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-lib/library/logit"
+	"github.com/liziwei01/gin-lib/library/response"
 	uploadModel "github.com/liziwei01/gin-file-download/modules/upload/model"
 	uploadService "github.com/liziwei01/gin-file-download/modules/upload/services"
 

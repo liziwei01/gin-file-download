@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-18 17:27:34
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 22:07:16
+ * @LastEditTime: 2023-04-06 16:35:16
  * @Description: file content
  */
 package services
@@ -13,8 +13,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/liziwei01/gin-file-download/library/env"
-	"github.com/liziwei01/gin-file-download/library/utils"
+	"github.com/liziwei01/gin-lib/library/env"
+	"github.com/liziwei01/gin-lib/library/utils"
 	infoData "github.com/liziwei01/gin-file-download/modules/user/data/info"
 	userModel "github.com/liziwei01/gin-file-download/modules/user/model"
 	infoModel "github.com/liziwei01/gin-file-download/modules/user/model/info"

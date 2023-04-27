@@ -2,14 +2,18 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 11:14:30
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 21:48:02
+ * @LastEditTime: 2023-04-27 12:15:10
  * @Description: file content
  */
 package controllers
 
 import (
-	"github.com/liziwei01/gin-file-download/library/response"
+	"fmt"
+
+	"github.com/liziwei01/gin-file-download/library/file"
+	"github.com/liziwei01/gin-file-download/modules/download/constant"
 	downloadModel "github.com/liziwei01/gin-file-download/modules/download/model"
+	"github.com/liziwei01/gin-lib/library/response"
 
 	// uploadService "github.com/liziwei01/gin-file-download/modules/upload/services"
 
@@ -26,8 +30,12 @@ func DownloadLocal(ctx *gin.Context) {
 	if inputs.Path[0] != '/' {
 		inputs.Path = "/" + inputs.Path
 	}
-	
-	absPath := "../gin-file-download-data/" + ctx.GetString("email") + inputs.Path
+	client, err := file.GetClient(ctx, constant.SERVICE_CONF_FILE)
+	if err != nil {
+		return 
+	}
+	absPath := client.Location() + ctx.GetString("email") + inputs.Path
+	fmt.Println(absPath)
 	ctx.File(absPath)
 }
 

@@ -11,7 +11,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/liziwei01/gin-file-download/library/redis"
+	"github.com/liziwei01/gin-lib/library/redis"
 	"github.com/liziwei01/gin-file-download/modules/email/constant"
 )
 

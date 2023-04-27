@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-17 14:12:20
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 06:09:24
+ * @LastEditTime: 2023-04-06 16:35:10
  * @Description: file content
  */
 /*
@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/liziwei01/gin-file-download/library/utils"
+	"github.com/liziwei01/gin-lib/library/utils"
 	infoDao "github.com/liziwei01/gin-file-download/modules/user/dao/info"
 	infoModel "github.com/liziwei01/gin-file-download/modules/user/model/info"
 )

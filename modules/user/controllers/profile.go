@@ -1,5 +1,12 @@
 /*
  * @Author: liziwei01
+ * @Date: 2023-03-30 12:07:14
+ * @LastEditors: liziwei01
+ * @LastEditTime: 2023-04-06 16:34:31
+ * @Description: file content
+ */
+/*
+ * @Author: liziwei01
  * @Date: 2022-04-17 15:52:49
  * @LastEditors: liziwei01
  * @LastEditTime: 2022-04-17 15:57:14
@@ -8,7 +15,7 @@
 package controllers
 
 import (
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-lib/library/response"
 	userModel "github.com/liziwei01/gin-file-download/modules/user/model"
 	userService "github.com/liziwei01/gin-file-download/modules/user/services"
 

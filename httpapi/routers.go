@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-03-03 16:04:46
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 19:52:11
+ * @LastEditTime: 2023-04-27 12:14:36
  * @Description: 路由分发
  */
 
@@ -11,7 +11,7 @@ package httpapi
 import (
 	"net/http"
 
-	"github.com/liziwei01/gin-file-download/middleware"
+	"github.com/liziwei01/gin-lib/middleware"
 	downloadRouters "github.com/liziwei01/gin-file-download/modules/download/routers"
 	emailRouters "github.com/liziwei01/gin-file-download/modules/email/routers"
 	uploadRouters "github.com/liziwei01/gin-file-download/modules/upload/routers"
@@ -30,7 +30,7 @@ func InitRouters(handler *gin.Engine) {
 	handler.Use(middleware.CrossRegionMiddleware())
 	// router.Use(middleware.CheckTokenMiddleware(), middleware.GetFrequencyControlMiddleware(), middleware.PostFrequencyControlMiddleware(), middleware.MailFrequencyControlMiddleware())
 	// init routers
-	router := handler.Group("/gin-file-download")
+	router := handler.Group("")
 	userRouters.Init(router)
 	emailRouters.Init(router)
 	uploadRouters.Init(router)

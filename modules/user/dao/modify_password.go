@@ -3,7 +3,7 @@ package dao
 import (
 	"context"
 
-	"github.com/liziwei01/gin-file-download/library/mysql"
+	"github.com/liziwei01/gin-lib/library/mysql"
 	"github.com/liziwei01/gin-file-download/modules/user/constant"
 	userModel "github.com/liziwei01/gin-file-download/modules/user/model"
 )

@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 10:45:14
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-16 20:30:44
+ * @LastEditTime: 2023-04-06 16:33:41
  * @Description: file content
  */
 package services
@@ -11,7 +11,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/liziwei01/gin-file-download/library/logit"
+	"github.com/liziwei01/gin-lib/library/logit"
 	emailData "github.com/liziwei01/gin-file-download/modules/email/data"
 	emailModel "github.com/liziwei01/gin-file-download/modules/email/model"
 )

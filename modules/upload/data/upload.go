@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 14:54:56
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-12 15:25:25
+ * @LastEditTime: 2023-04-06 16:33:58
  * @Description: file content
  */
 package data
@@ -15,9 +15,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/liziwei01/gin-file-download/library/logit"
-	"github.com/liziwei01/gin-file-download/library/oss"
-	"github.com/liziwei01/gin-file-download/library/utils"
+	"github.com/liziwei01/gin-lib/library/logit"
+	"github.com/liziwei01/gin-lib/library/oss"
+	"github.com/liziwei01/gin-lib/library/utils"
 	"github.com/liziwei01/gin-file-download/modules/upload/constant"
 )
 

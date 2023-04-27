@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 15:35:20
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-12 15:37:29
+ * @LastEditTime: 2023-04-06 16:31:37
  * @Description: file content
  */
 package data
@@ -10,7 +10,7 @@ package data
 import (
 	"context"
 
-	"github.com/liziwei01/gin-file-download/library/oss"
+	"github.com/liziwei01/gin-lib/library/oss"
 	"github.com/liziwei01/gin-file-download/modules/upload/constant"
 )
 

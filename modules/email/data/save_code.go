@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 14:00:29
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-26 00:40:28
+ * @LastEditTime: 2023-04-06 16:33:18
  * @Description: file content
  */
 package data
@@ -11,7 +11,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/liziwei01/gin-file-download/library/redis"
+	"github.com/liziwei01/gin-lib/library/redis"
 	"github.com/liziwei01/gin-file-download/modules/email/constant"
 )
 

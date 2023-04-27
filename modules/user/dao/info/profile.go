@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-17 15:58:23
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-17 16:00:13
+ * @LastEditTime: 2023-04-06 16:34:59
  * @Description: file content
  */
 package info
@@ -10,7 +10,7 @@ package info
 import (
 	"context"
 
-	"github.com/liziwei01/gin-file-download/library/mysql"
+	"github.com/liziwei01/gin-lib/library/mysql"
 	"github.com/liziwei01/gin-file-download/modules/user/constant"
 )
 

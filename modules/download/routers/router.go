@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 10:45:14
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 19:49:04
+ * @LastEditTime: 2023-04-06 17:03:00
  * @Description: file content
  */
 package routers
@@ -10,7 +10,6 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/liziwei01/gin-file-download/middleware"
 	downloadController "github.com/liziwei01/gin-file-download/modules/download/controllers"
 )
 
@@ -21,7 +20,7 @@ import (
  */
 func Init(router *gin.RouterGroup) {
 	downloadGroup := router.Group("/api/download")
-	downloadGroup.Use(middleware.CheckLoginMiddleware())
+	// downloadGroup.Use(middleware.CheckLoginMiddleware())
 	{
 		downloadGroup.GET("/local", downloadController.DownloadLocal)
 		downloadGroup.GET("/tree", downloadController.Tree)

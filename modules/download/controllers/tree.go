@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-07-02 19:41:58
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 21:59:44
+ * @LastEditTime: 2023-04-06 16:58:44
  * @Description: file content
  */
 package controllers
@@ -11,10 +11,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-file-download/library/file"
+	"github.com/liziwei01/gin-file-download/modules/download/constant"
 	downloadModel "github.com/liziwei01/gin-file-download/modules/download/model"
-
-	// uploadService "github.com/liziwei01/gin-file-download/modules/upload/services"
+	"github.com/liziwei01/gin-lib/library/response"
 
 	"github.com/gin-gonic/gin"
 )
@@ -30,9 +30,14 @@ func Tree(ctx *gin.Context) {
 		inputs.Path = "/" + inputs.Path
 	}
 
+	client, err := file.GetClient(ctx, constant.SERVICE_CONF_FILE)
+	if err != nil {
+		return
+	}
+
 	var files []string
-	absPath := "../gin-file-download-data/" + ctx.GetString("email") + inputs.Path
-	err := filepath.Walk(absPath, func(path string, info os.FileInfo, err error) error {
+	absPath := client.Location() + ctx.GetString("email") + inputs.Path
+	err = filepath.Walk(absPath, func(path string, info os.FileInfo, err error) error {
 		files = append(files, path)
 		return nil
 	})

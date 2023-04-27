@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-lib/library/response"
 	userModel "github.com/liziwei01/gin-file-download/modules/user/model"
 	userService "github.com/liziwei01/gin-file-download/modules/user/services"
 

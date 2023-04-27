@@ -10,7 +10,7 @@ package data
 import (
 	"context"
 
-	"github.com/liziwei01/gin-file-download/library/oss"
+	"github.com/liziwei01/gin-lib/library/oss"
 	"github.com/liziwei01/gin-file-download/modules/upload/constant"
 )
 

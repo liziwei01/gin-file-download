@@ -1,0 +1,6 @@
+# db_file_user.toml: mysql数据库db_file_user配置文件
+
+# Service的名字, 必选
+Name = "file_local"
+
+Location = "data"

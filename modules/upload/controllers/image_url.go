@@ -8,7 +8,7 @@
 package controllers
 
 import (
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-lib/library/response"
 	uploadModel "github.com/liziwei01/gin-file-download/modules/upload/model"
 	uploadService "github.com/liziwei01/gin-file-download/modules/upload/services"
 

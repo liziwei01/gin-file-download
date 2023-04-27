@@ -2,10 +2,10 @@
  * @Author: liziwei01
  * @Date: 2022-03-04 15:43:21
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-12 15:19:40
+ * @LastEditTime: 2022-04-12 15:19:01
  * @Description: file content
  */
-package email
+package file
 
 import (
 	"context"
@@ -14,21 +14,21 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/liziwei01/gin-file-download/library/conf"
-	"github.com/liziwei01/gin-file-download/library/env"
-	"github.com/liziwei01/gin-file-download/library/logit"
+	"github.com/liziwei01/gin-lib/library/conf"
+	"github.com/liziwei01/gin-lib/library/env"
+	"github.com/liziwei01/gin-lib/library/logit"
 )
 
 const (
-	// oss conf file path
-	ossPath = "/servicer/"
-	prefix  = ".toml"
+	// file conf file path
+	filePath = "/servicer/"
+	prefix    = ".toml"
 )
 
 var (
 	// conf file root path
 	configPath = env.Default.ConfDir()
-	// mysql client map, client use single instance mode
+	// file client map, client use single instance mode
 	clients map[string]Client
 	// 初始化互斥锁
 	initMux sync.Mutex
@@ -53,13 +53,13 @@ func GetClient(ctx context.Context, serviceName string) (Client, error) {
 		return client, nil
 	}
 
-	logit.Logger.Error("email client init err: %s", err.Error())
+	logit.Logger.Error("file client init err: %s", err.Error())
 
 	return nil, err
 }
 
 /**
- * @description: init oss client，considering concurrent set, lock
+ * @description: init file client，considering concurrent set, lock
  * @param {string} serviceName
  * @return {*}
  */
@@ -81,13 +81,13 @@ func setClient(serviceName string) (Client, error) {
 }
 
 /**
- * @description: according to conf service, read conf from conf file to init oss client
+ * @description: according to conf service, read conf from conf file to init file client
  * @param {string} serviceName
  * @return {*}
  */
 func initClient(serviceName string) (Client, error) {
 	var config *Config
-	fileAbs, err := filepath.Abs(filepath.Join(configPath, ossPath, serviceName+prefix))
+	fileAbs, err := filepath.Abs(filepath.Join(configPath, filePath, serviceName+prefix))
 	if err != nil {
 		return nil, err
 	}
@@ -96,5 +96,5 @@ func initClient(serviceName string) (Client, error) {
 		client := New(config)
 		return client, nil
 	}
-	return nil, fmt.Errorf("email conf not exist")
+	return nil, fmt.Errorf("file conf not exist")
 }

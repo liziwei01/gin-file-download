@@ -10,7 +10,7 @@ package data
 import (
 	"context"
 
-	"github.com/liziwei01/gin-file-download/library/email"
+	"github.com/liziwei01/gin-lib/library/email"
 	"github.com/liziwei01/gin-file-download/modules/email/constant"
 )
 

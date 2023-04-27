@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 10:45:14
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-16 21:22:14
+ * @LastEditTime: 2023-04-06 16:34:45
  * @Description: file content
  */
 package dao
@@ -11,8 +11,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/liziwei01/gin-file-download/library/logit"
-	"github.com/liziwei01/gin-file-download/library/mysql"
+	"github.com/liziwei01/gin-lib/library/logit"
+	"github.com/liziwei01/gin-lib/library/mysql"
 	"github.com/liziwei01/gin-file-download/modules/user/constant"
 	userModel "github.com/liziwei01/gin-file-download/modules/user/model"
 )

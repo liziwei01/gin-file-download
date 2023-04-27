@@ -2,13 +2,13 @@
  * @Author: liziwei01
  * @Date: 2022-04-18 20:12:54
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-06-28 01:55:52
+ * @LastEditTime: 2023-04-06 16:34:19
  * @Description: file content
  */
 package controllers
 
 import (
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-lib/library/response"
 	infoModel "github.com/liziwei01/gin-file-download/modules/user/model/info"
 
 	infoService "github.com/liziwei01/gin-file-download/modules/user/services/info"

@@ -2,14 +2,14 @@
  * @Author: liziwei01
  * @Date: 2022-04-18 17:27:34
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-07-02 06:02:27
+ * @LastEditTime: 2023-04-06 16:34:23
  * @Description: file content
  */
 package controllers
 
 import (
-	"github.com/liziwei01/gin-file-download/library/cookie"
-	"github.com/liziwei01/gin-file-download/library/response"
+	"github.com/liziwei01/gin-lib/library/cookie"
+	"github.com/liziwei01/gin-lib/library/response"
 	"github.com/liziwei01/gin-file-download/modules/user/constant"
 	userModel "github.com/liziwei01/gin-file-download/modules/user/model"
 	userService "github.com/liziwei01/gin-file-download/modules/user/services"

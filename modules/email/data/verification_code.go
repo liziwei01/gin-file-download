@@ -2,7 +2,7 @@
  * @Author: liziwei01
  * @Date: 2022-04-12 13:51:55
  * @LastEditors: liziwei01
- * @LastEditTime: 2022-04-16 20:45:05
+ * @LastEditTime: 2023-04-06 16:33:36
  * @Description: file content
  */
 package data
@@ -13,7 +13,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/liziwei01/gin-file-download/library/redis"
+	"github.com/liziwei01/gin-lib/library/redis"
 	"github.com/liziwei01/gin-file-download/modules/email/constant"
 
 	"github.com/gogf/gf/util/gconv"
